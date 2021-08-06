@@ -30,6 +30,21 @@ public class PosMachine {
         return itemWithDetails;
     }
 
+    private String generateReceipt(Receipt receipt) {
+        StringBuilder receiptMessage = new StringBuilder("***<store earning no money>Receipt***\n");
+
+        for (Item item : receipt.getItemDetail()) {
+            receiptMessage.append("Name: ").append(item.getName())
+                    .append(", Quantity: ").append(item.getQuantity())
+                    .append(", Unit price: ").append(item.getPrice()).append(" (yuan)")
+                    .append(", Subtotal: ").append(item.getSubtotal()).append(" (yuan)").append("\n");
+        }
+        receiptMessage.append("----------------------\n" + "Total: ").append(receipt.getTotalPrice()).append(" (yuan)\n")
+                .append("**********************");
+
+        return receiptMessage.toString();
+    }
+
     private Receipt getReceiptDetails(List<Item> itemsWithDetail) {
         List<Item> itemsWithSubTotal = calculateSubTotal(itemsWithDetail);
         return new Receipt(itemsWithSubTotal, calculateTotal(itemsWithSubTotal));
