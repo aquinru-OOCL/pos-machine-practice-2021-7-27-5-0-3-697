@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class PosMachine {
 
     private List<Item> loadAllItemsInfo(List<String> barcodes) {
-        List<Item> itemWithDetails = new ArrayList<Item>();
+        List<Item> itemWithDetails = new ArrayList<>();
         List<String> distinctBarCodes;
         distinctBarCodes = barcodes.stream()
                 .distinct()
