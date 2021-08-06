@@ -32,9 +32,7 @@ public class PosMachine {
 
     private Receipt getReceiptDetails(List<Item> itemsWithDetail) {
         List<Item> itemsWithSubTotal = calculateSubTotal(itemsWithDetail);
-        int totalPrice = calculateTotal(itemsWithSubTotal);
-        Receipt receipt = new Receipt(itemsWithSubTotal, totalPrice);
-        return receipt;
+        return new Receipt(itemsWithSubTotal, calculateTotal(itemsWithSubTotal));
     }
 
     private List<Item> calculateSubTotal(List<Item> itemsWithDetail) {
