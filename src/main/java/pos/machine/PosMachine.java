@@ -40,4 +40,12 @@ public class PosMachine {
         return itemsWithSubtotal;
     }
 
+    private int calculateTotal(List<Item> itemsWithSubTotal) {
+        int totalPrice = 0;
+        for(Item item : itemsWithSubTotal){
+            totalPrice += item.getSubtotal();
+        }
+        return totalPrice;
+    }
+
 }
