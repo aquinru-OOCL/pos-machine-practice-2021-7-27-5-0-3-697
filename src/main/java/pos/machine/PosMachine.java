@@ -8,6 +8,11 @@ import java.util.stream.Collectors;
 
 public class PosMachine {
 
+    public String printReceipt(List<String> barcodes) {
+        List<Item> itemsWithDetail = loadAllItemsInfo(barcodes);
+        return null;
+    }
+
     private List<Item> loadAllItemsInfo(List<String> barcodes) {
         List<Item> itemWithDetails = new ArrayList<>();
         List<String> distinctBarCodes;
