@@ -10,7 +10,8 @@ public class PosMachine {
 
     public String printReceipt(List<String> barcodes) {
         List<Item> itemsWithDetail = loadAllItemsInfo(barcodes);
-        return null;
+        Receipt receipt = getReceiptDetails(itemsWithDetail);
+        return generateReceipt(receipt);
     }
 
     private List<Item> loadAllItemsInfo(List<String> barcodes) {
